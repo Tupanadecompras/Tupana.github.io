@@ -4,7 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu Página de Cotizaciones</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            background-color: #007bff;
+            color: #fff;
+            padding: 1rem;
+        }
+
+        h1, h2 {
+            margin: 0.5rem 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1rem 0;
+        }
+
+        input {
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -41,60 +93,27 @@
         <a href="https://wa.me/+18096734188" target="_blank">Contactar en WhatsApp</a>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script>
+        // JavaScript
+
+        // Función para manejar el envío del carrito
+        function enviarCarrito() {
+            const linkCarrito = document.getElementById('linkCarrito').value;
+            const mensaje = Hola! Aquí está el enlace de mi carrito: ${linkCarrito};
+            
+            // Redirigir al usuario a WhatsApp con el mensaje prellenado
+            window.open(https://wa.me/1234567890?text=${encodeURIComponent(mensaje)}, '_blank');
+        }
+
+        // Opcional: Manejo del registro de usuario
+        document.getElementById('formRegistro').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+
+            alert(Gracias por registrarte, ${nombre}! Te contactaremos pronto.);
+            // Aquí podrías agregar código para enviar estos datos a una base de datos.
+        });
+    </script>
 </body>
 </html>
-
-
-/* styles.css */
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-header, footer {
-    background-color: #007bff;
-    color: #fff;
-    padding: 1rem;
-}
-
-h1, h2 {
-    margin: 0.5rem 0;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem 0;
-}
-
-input {
-    padding: 0.5rem;
-    margin: 0.5rem 0;
-    width: 80%;
-    max-width: 400px;
-}
-
-button {
-    padding: 0.5rem 1rem;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-footer a {
-    color: #ffc107;
-    text-decoration: none;
-    font-weight: bold;
-}
