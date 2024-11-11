@@ -3,180 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Página de Cotizaciones</title>
+    <title>Proceso de pagos, estados de pedidos y forma de entrega</title>
     <style>
-        /* CSS */
+        /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f4f4f9;
             color: #333;
-            text-align: center;
             margin: 0;
             padding: 0;
-        }
-
-        header, footer {
-            background-color: #007bff;
-            color: #fff;
-            padding: 1rem;
-            position: relative;
-        }
-
-        h1, h2 {
-            margin: 0.5rem 0;
-        }
-
-        /* Estilos para el logo */
-        header img {
-            max-width: 80px; /* Ajustado para hacerlo más pequeño */
-            height: auto;
-        }
-
-        /* Ícono de usuario en la parte superior izquierda */
-        .user-icon {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            font-size: 25px;
-            cursor: pointer;
-        }
-
-        form {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            margin: 1rem 0;
-        }
-        input {
-            padding: 0.5rem;
-            margin: 0.5rem 0;
-            width: 80%;
-            max-width: 400px;
+            min-height: 100vh;
         }
 
-        button {
-            padding: 0.5rem 1rem;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            cursor: pointer;
+        /* Contenedor principal */
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        button:hover {
-            background-color: #218838;
+        /* Estilo del título */
+        h1 {
+            font-size: 2em;
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Verdana', sans-serif;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
         }
 
-        footer a {
-            color: #ffc107;
+        /* Estilo del texto */
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #333;
+            font-family: 'Georgia', serif;
+            text-align: justify;
+        }
+
+        /* Enlace de WhatsApp */
+        .whatsapp {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #ffffff;
+            background-color: #25d366;
+            padding: 10px;
+            border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
         }
 
-        /* Estilos de la sección de login y registro */
-        .login-section, .register-section {
-            margin-top: 50px;
-            text-align: left;
-        }
-
-        /* Ocultar por defecto las secciones */
-        .hidden {
-            display: none;
+        .whatsapp:hover {
+            background-color: #1eb843;
         }
     </style>
 </head>
 <body>
-    <header>
-        <!-- Ícono de usuario redirige al login -->
-        <span class="user-icon" onclick="mostrarLogin()">👤</span>
-        <img src="logo.png" alt="Logo de mi marca">
-    </header>
+    <div class="container">
+        <h1>Proceso de pagos, estados de pedidos y forma de entrega</h1>
+        
+        <p>
+            Tu pana de compras intenta tener una relación cercana con cada uno de sus panas, manteniendo una comunicación fluida vía WhatsApp para responder cada pregunta y para recibir el link de sus carritos de compras.
+        </p>
 
-    <!-- Sección de registro -->
-    <section id="registro" class="register-section hidden">
-        <h2>Regístrate</h2>
-        <form id="formRegistro">
-            <label for="registroEmail">Correo electrónico:</label>
-            <input type="email" id="registroEmail" required>
-            
-            <label for="registroPassword">Contraseña:</label>
-            <input type="password" id="registroPassword" required>
-            
-            <button type="submit">Registrar</button>
-        </form>
-        <p>¿Ya tienes cuenta? <a href="javascript:void(0);" onclick="mostrarLogin()">Inicia sesión aquí</a></p>
-    </section><!-- Sección de carrito -->
-    <section id="carrito">
-        <h2>Envíanos tu carrito</h2>
-        <form id="formCarrito">
-            <label for="linkCarrito">Enlace de carrito de compras:</label>
-            <input type="url" id="linkCarrito" placeholder="Pega el enlace aquí" required>
-            
-            <button type="button" onclick="enviarCarrito()">Enviar y Cotizar</button>
-        </form>
-        <p id="status"></p>
-    </section>
+        <p>
+            Al recibir tu carrito y ser analizado, cada uno de nuestros panas va a recibir el costo del servicio completo que incluye pagos en la página de compra, pagos de los envíos desde el extranjero y pagos logísticos por aduana, transportistas y demás. Es importante que nuestros panas sepan que recibirán una cotización más alta de lo que cuestan solo los productos, ya que nos encargamos de costear todo lo anterior.
+        </p>
 
-    <!-- Sección de login -->
-    <section id="login" class="login-section">
-        <h2>Inicia sesión</h2>
-        <form id="formLogin">
-            <label for="loginEmail">Correo electrónico:</label>
-            <input type="email" id="loginEmail" required>
-            
-            <label for="loginPassword">Contraseña:</label>
-            <input type="password" id="loginPassword" required>
-            
-            <button type="submit">Iniciar sesión</button>
-        </form>
-        <p>¿No tienes cuenta? <a href="javascript:void(0);" onclick="mostrarRegistro()">Regístrate aquí</a></p>
-    </section>
+        <p>
+            El costo puede aumentar dependiendo la cantidad de productos o tipos de productos debido al peso que puedan sumar todos sus productos. Los costos pueden variar en base a una tabla que explica el aumento según rangos específicos de peso.
+        </p>
 
-    <footer>
-        <p>Contáctanos en WhatsApp para recibir más detalles.</p>
-        <a href="https://wa.me/1234567890" target="_blank">Contactar en WhatsApp</a>
-    </footer>
+        <p>
+            Los costos internos por envío en el país serán determinados vía WhatsApp con cada pana de forma individual. Esto puede variar según su localidad y vía de envío.
+        </p>
 
-    <script>
-        // Funciones para mostrar el formulario adecuado (Login o Registro)
-        function mostrarLogin() {
-            document.getElementById('login').classList.remove('hidden');
-            document.getElementById('registro').classList.add('hidden');
-        }
+        <p>
+            Todas estas informaciones serán recibidas detalladamente pero más reducida por cada uno de los panas cuando se comunique por Whatsapp o envíe su carrito de compras por primera vez.
+        </p>
 
-        function mostrarRegistro() {
-            document.getElementById('registro').classList.remove('hidden');
-            document.getElementById('login').classList.add('hidden');
-        }
+        <p>
+            Recibirá los detalles de su pedido, costos, peso aproximado, fecha promedio para recibir sus productos y mientras haya un avance recibirá los cambios en el estado de su pedido. Su pedido será empacado de una manera distinta a los demás. Una de nuestras metas es que cada pana sienta la seguridad y cuidado de sus paquetes. Tendrá un paquete agradable y bonito.
+        </p>
 
-        // Función para manejar el envío del carrito
-        function enviarCarrito() {
-            const linkCarrito = document.getElementById('linkCarrito').value;
-            const mensaje = Hola! Aquí está el enlace de mi carrito: ${linkCarrito};
-            
-            // Redirigir al usuario a WhatsApp con el mensaje prellenado
-            window.open(https://wa.me/1234567890?text=${encodeURIComponent(mensaje)}, '_blank');
-        }
+        <p>
+            Tu pana espera por ti y se siente feliz por decidir confiar en él.
+        </p>
 
-        // Manejo del registro de usuario
-        document.getElementById('formRegistro').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const registroEmail = document.getElementById('registroEmail').value;
-            const registroPassword = document.getElementById('registroPassword').value;
-
-            alert(Gracias por registrarte, ${registroEmail}!);
-            // Aquí podrías agregar código para guardar estos datos en una base de datos.
-            mostrarLogin(); // Redirigir al login después de registrarse.
-        });
-
-        // Manejo de login
-        document.getElementById('formLogin').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const loginEmail = document.getElementById('loginEmail').value;
-            const loginPassword = document.getElementById('loginPassword').value;
-
-            alert(Bienvenido de nuevo, ${loginEmail}!);
-            // Aquí podrías agregar código para validar el usuario y redirigir a una página privada.
-        });
-    </script>
+        <a href="https://wa.me/+18096734188" class="whatsapp">¡Te espero vía WhatsApp, mi pana!</a>
+    </div>
 </body>
 </html>
